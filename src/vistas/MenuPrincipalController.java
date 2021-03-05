@@ -24,9 +24,9 @@ public class MenuPrincipalController {
     private Button btnMedicamentos;
 
     @FXML
-    public void vistaDueños() {
+    public void vistaDuenos() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Dueños.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("VistaDueos.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(page));
@@ -48,23 +48,6 @@ public class MenuPrincipalController {
             Stage stage = new Stage();
             stage.setScene(new Scene(page));
             stage.setTitle("Mascotas");
-            stage.show();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    @FXML
-    public void vistaCitas() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Citas.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(page));
-            stage.setTitle("Citas");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -4,8 +4,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -22,11 +20,6 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="451.0" prefWidth="703.0">
                <children>
-                  <ImageView fitHeight="388.0" fitWidth="515.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../BDfondos/Tabla.jpg" />
-                     </image>
-                  </ImageView>
                   <TableView layoutY="65.0" opacity="0.85" prefHeight="280.0" prefWidth="425.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
                     <columns>
                       <TableColumn prefWidth="71.0" text="Codigo" />
@@ -35,7 +28,7 @@
                         <TableColumn prefWidth="161.0" text="Sustancia Activa" />
                     </columns>
                   </TableView>
-                  <Button layoutX="368.0" layoutY="377.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="74.0" style="-fx-background-color: #355389;" text="Cerrar" textFill="WHITE" AnchorPane.bottomAnchor="51.0" AnchorPane.rightAnchor="356.0">
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="74.0" style="-fx-background-color: #355389;" text="Cerrar" textFill="WHITE" AnchorPane.bottomAnchor="414.0" AnchorPane.rightAnchor="710.0">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
                      </font>
@@ -45,6 +38,10 @@
                         <Font name="Arial Black" size="24.0" />
                      </font>
                   </Text>
+                  <Button layoutX="131.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #F26900;" text="insertar" />
+                  <Button layoutX="206.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #F26900;" text="eliminar" />
+                  <Button layoutX="284.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #EEFE10;" text="modificar" />
+                  <Button layoutX="368.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #EEFE10;" text="listar" />
                </children>
             </AnchorPane>
         </items>

@@ -11,12 +11,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DueñoDAO {
+public class DuenoDAO {
 
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;
 
-    public DueñoDAO() {
+    public DuenoDAO() {
         System.err.println("Iniciando conexionn");
         try {
             Configuration configuration = new Configuration();
@@ -34,7 +34,7 @@ public class DueñoDAO {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        Dueño userRegister = new Dueño(Nombre, Direccion, Telefono);
+        Dueno userRegister = new Dueno(Nombre, Direccion, Telefono);
         session.save(userRegister);
 
         session.getTransaction().commit();
@@ -42,17 +42,17 @@ public class DueñoDAO {
 
 
 
-    public List<Dueño> getAll() throws SQLException {
+    public List<Dueno> getAll() throws SQLException {
         Session session = factory.openSession();
-        List<Dueño> lista = new ArrayList<>();
+        List<Dueno> lista = new ArrayList<>();
 
-Dueño d = null;
+Dueno d = null;
         ResultSet rs = (ResultSet) session.createQuery("SELECT Nombre, Direccion, Telefono " +
                 "FROM db201269.dueño "
         );
 
         while(rs.next()){
-d = new Dueño();
+d = new Dueno();
 
 d.setNombre(rs.getString("Nombre").trim());
 d.setDireccion(rs.getString("Direccion").trim());

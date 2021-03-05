@@ -12,15 +12,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import persistencia.Dueño;
-import persistencia.DueñoDAO;
+import javafx.stage.Stage;
+import modelosDAO.Dueno;
+import modelosDAO.DuenoDAO;
 
-import java.math.BigInteger;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class DueñosController implements Initializable {
+public class VistaDueosController implements Initializable {
     @FXML
     private Button idNew;
     @FXML
@@ -37,45 +37,43 @@ public class DueñosController implements Initializable {
     private TextField idTelefono;
 
     @FXML
-    private TableView<Dueño> tblListaDueños;
+    private TableView<Dueno> tblListaDueños;
 
     @FXML
-    private TableColumn<Dueño, String> clmnNombre;
+    private TableColumn<Dueno, String> clmnNombre;
     @FXML
-    private TableColumn<Dueño, String> clmnDireccion;
+    private TableColumn<Dueno, String> clmnDireccion;
     @FXML
-    private TableColumn<Dueño, String> clmnTelefono;
+    private TableColumn<Dueno, String> clmnTelefono;
 
 
 
-    private ObservableList<Dueño> olListaDueños ;
+    private ObservableList<Dueno> olListaDuenos;
 
-private DueñoDAO dueñoDAO;
+private DuenoDAO duenoDAO;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        olListaDueños = FXCollections.observableArrayList();
+        /*olListaDuenos = FXCollections.observableArrayList();
         try {
-            dueñoDAO = new DueñoDAO();
-            olListaDueños.addAll(dueñoDAO.getAll());
-            tblListaDueños.setItems(olListaDueños);
-            clmnNombre.setCellValueFactory(new PropertyValueFactory<Dueño, String>("Nombre"));
-            clmnDireccion.setCellValueFactory(new PropertyValueFactory<Dueño, String>("Direccion"));
-            clmnTelefono.setCellValueFactory(new PropertyValueFactory<Dueño, String>("Telefono"));
+            duenoDAO = new DuenoDAO();
+            olListaDuenos.addAll(duenoDAO.getAll());
+            tblListaDueños.setItems(olListaDuenos);
+            clmnNombre.setCellValueFactory(new PropertyValueFactory<Dueno, String>("Nombre"));
+            clmnDireccion.setCellValueFactory(new PropertyValueFactory<Dueno, String>("Direccion"));
+            clmnTelefono.setCellValueFactory(new PropertyValueFactory<Dueno, String>("Telefono"));
             gestionDeEventos();
         } catch (SQLException e) {
             System.err.println("Error en algo que no se");
             System.err.println(e.getMessage());
-        }
+        }*/
 
 
     }
-
-
     @FXML
     public void BtnGuardar(Event event){
-        DueñoDAO dao = new DueñoDAO();
+        DuenoDAO dao = new DuenoDAO();
 
         dao.GuardarDatos(idNombre.getText(), idDireccion.getText(), idTelefono.getText());
     }
@@ -85,10 +83,10 @@ private DueñoDAO dueñoDAO;
     public void gestionDeEventos() {
 
 
-        tblListaDueños.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Dueño>() {
+        tblListaDueños.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Dueno>() {
 
             @Override
-            public void changed(ObservableValue<? extends Dueño> observableValue, Dueño valorAnterior, Dueño valorNuevo) {
+            public void changed(ObservableValue<? extends Dueno> observableValue, Dueno valorAnterior, Dueno valorNuevo) {
 
             }
         });

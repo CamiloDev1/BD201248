@@ -7,15 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+    public Main() {
+    }
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("BD201248_Proyecto");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("../vistas/MenuPrincipal.fxml"));
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setTitle("Menu principal");
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

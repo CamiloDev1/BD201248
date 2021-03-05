@@ -2,18 +2,18 @@ package modelosDAO;
 
 import java.io.Serializable;
 
-public class Dueño implements Serializable {
+public class Dueno implements Serializable {
 
     private Integer IdDueño;
     private String Nombre;
     private String Direccion;
     private String Telefono;
-    private Dueño dueño;
+    private Dueno dueno;
 
-    public Dueño() {
+    public Dueno() {
     }
 
-    public Dueño(String Nombre,String Direccion,String Telefono) {
+    public Dueno(String Nombre, String Direccion, String Telefono) {
         this.Nombre = Nombre;
         this.Direccion = Direccion;
         this.Telefono = Telefono;
@@ -47,10 +47,10 @@ public class Dueño implements Serializable {
     }
 
 
-    public void setDueño(Dueño dueño) {
-        this.dueño = dueño;
+    public void setDueño(Dueno dueno) {
+        this.dueno = dueno;
     }
-    public Dueño getDueño() {
-        return dueño;
+    public Dueno getDueño() {
+        return dueno;
     }
 }

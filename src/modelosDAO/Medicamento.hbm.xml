@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="modelosDAO">
-  <class name="Cita" table="cita">
+  <class name="modelosDAO.Medicamento" table="Medicamentos">
    <id name="id"
-            column="idCita"
+            column="codigo"
             type="java.lang.Integer"
             unsaved-value="null" >
             <generator class="native">
             </generator>
         </id>
-
-<property name="NombreMascota" column="NombreMascota"/>
-<property name="Fecha" column="Fecha" />
-<property name="Servicio" column="Servicio" />
-    <many-to-one name="Cita" class="Cita" fetch="select">
-            <column name="IdCita" not-null="true" />
+<property name="NombreMedicamento" column="NombreMedicamento"/>
+<property name="SustanciaActiva" column="SustanciaActiva" />
+<property name="Caducidad" column="Caducidad" />
+    <many-to-one name="Medicamento" class="modelosDAO.Medicamento" fetch="select">
+            <column name="Codigo" not-null="true" />
     </many-to-one>
   </class>
 </hibernate-mapping>
